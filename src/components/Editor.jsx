@@ -71,13 +71,14 @@ const CodePen = () => {
     return (
         <div className='flex bg-[#2c2c2c]'>
             <div className='w-[85%]'>
-                <Editor height='100vh' width='85vw' defaultLanguage="javascript" defaultValue={formData.codeString} theme='vs-dark' name="codeString" onChange={handleEditorChange}/>
+                <Editor height='100vh' width='85vw' defaultLanguage="cpp" defaultValue={formData.codeString} theme='vs-dark' name="codeString" onChange={handleEditorChange}/>
             </div>
             <div className='w-[15%] flex flex-col gap-3 items-center justify-center bg-[#2c2c2c] mx-5'>
                 <input className='p-2 outline-none w-full rounded bg-gray-200' name='title' type="text" placeholder='Title' value={formData.title} onChange={(e) => handleInput(e)} />
                 <select name="language" className='p-2 w-full rounded bg-gray-200' value={formData.language} onChange={(e) => handleInput(e)}>
                     <option value="">Select Language</option>
                     <option value="javascript">javascript</option>
+                    <option value="cpp">c++</option>
                     <option value="python">python</option>
                 </select>
                 {sections && <select name="sectionId" className='p-2 w-full rounded bg-gray-200' value={formData.sectionId} onChange={(e) => handleInput(e)}>
@@ -86,7 +87,7 @@ const CodePen = () => {
                         return <option key={idx} value={section._id}>{section.name}</option>
                     })}
                 </select>}
-                <button onClick={(e) => handleSubmit(e)} className='p-2 px-4 w-full text-white bg-teal-600 rounded'>Submit</button>
+                <button onClick={(e) => handleSubmit(e)} className='p-2 px-4 w-full text-white bg-teal-400 rounded'>Submit</button>
                 <button onClick={(e) => handleSubmit(e, 'delete')} className='p-2 px-4 w-full text-white bg-red-600 rounded'>Delete</button>
             </div>
         </div>

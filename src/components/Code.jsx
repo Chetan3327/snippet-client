@@ -6,7 +6,7 @@ const Code = ({codeString='console.log("hello, world")', title='*Untitled.txt', 
   const [copy, setCopy] = useState(false)
   return (
       <div className='max-w-3xl min-w-[25rem] bg-[#3a404d] rounded-md overflow-hidden'>
-        <div className='flex justify-between px-4 text-white text-xs items-center'>
+        <div className='flex justify-between px-4 py-2 text-white text-xs items-center'>
           <p className='text-sm'>{title}</p>
           {copy ? (
           <button className='py-1 inline-flex items-center gap-1'>
